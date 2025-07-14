@@ -1,11 +1,8 @@
 terraform {
-  required_version = ">= 1.3"
-
   backend "s3" {
-    bucket         = "your-terraform-state-bucket"
-    key            = "terraform.tfstate"
+    bucket         = "your-s3-bucket-name"
+    key            = "lesson-7/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "terraform-lock-table"
-    encrypt        = true
+    dynamodb_table = "your-lock-table"
   }
 }
